@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 
 class App extends PureComponent {
-  public static render() {
+  render() {
     return <div>앱</div>;
   }
 }

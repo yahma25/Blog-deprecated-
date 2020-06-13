@@ -26,7 +26,25 @@
                 "tsx": "never"
             }
         ],
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", "ts", "tsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", "ts", "tsx"] }],
+        "class-methods-use-this": [
+            "error",
+            {
+                "exceptMethods": [
+                    "render",
+                    "getInitialState",
+                    "getDefaultProps",
+                    "getChildContext",
+                    "componentWillMount",
+                    "componentDidMount",
+                    "componentWillReceiveProps",
+                    "shouldComponentUpdate",
+                    "componentWillUpdate",
+                    "componentDidUpdate",
+                    "componentWillUnmount"
+                ]
+            }
+        ]
     },
     "settings": {
         "import/resolver": {
