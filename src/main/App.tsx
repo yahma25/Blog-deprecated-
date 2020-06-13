@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
+import AppLayout from '../layout/AppLayout';
 
 class App extends PureComponent {
   render() {
-    return <div>앱</div>;
+    return <AppLayout />;
   }
 }
 
