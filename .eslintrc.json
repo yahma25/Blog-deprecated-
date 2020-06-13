@@ -3,54 +3,74 @@
  ** https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/imports.js
 **/
 {
-    "env": {
-        "node": true,
-        "browser": true,
-        "es6": true
-    },
-    "extends": ["airbnb", "airbnb-base", "plugin:@typescript-eslint/eslint-recommended"],
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-        "react",
-        "@typescript-eslint"
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb-base",
+    "plugin:@typescript-eslint/eslint-recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "import/no-unresolved": 0,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
     ],
-    "rules": {
-        "import/no-unresolved": 0,
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-                "js": "never",
-                "jsx": "never",
-                "ts": "never",
-                "tsx": "never"
-            }
-        ],
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", "ts", "tsx"] }],
-        "class-methods-use-this": [
-            "error",
-            {
-                "exceptMethods": [
-                    "render",
-                    "getInitialState",
-                    "getDefaultProps",
-                    "getChildContext",
-                    "componentWillMount",
-                    "componentDidMount",
-                    "componentWillReceiveProps",
-                    "shouldComponentUpdate",
-                    "componentWillUpdate",
-                    "componentDidUpdate",
-                    "componentWillUnmount"
-                ]
-            }
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          "ts",
+          "tsx"
         ]
-    },
-    "settings": {
-        "import/resolver": {
-            "node": {
-                "extensions": [".mjs", ".js", ".json", ".ts", ".tsx"]
-            }
-        }
+      }
+    ],
+    "class-methods-use-this": [
+      "error",
+      {
+        "exceptMethods": [
+          "render",
+          "getInitialState",
+          "getDefaultProps",
+          "getChildContext",
+          "componentWillMount",
+          "componentDidMount",
+          "componentWillReceiveProps",
+          "shouldComponentUpdate",
+          "componentWillUpdate",
+          "componentDidUpdate",
+          "componentWillUnmount"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".mjs",
+          ".js",
+          ".json",
+          ".ts",
+          ".tsx"
+        ]
+      }
     }
+  }
 }
