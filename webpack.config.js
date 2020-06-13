@@ -5,13 +5,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "development",
-    entry: "./src/index.ts",
+    entry: "./src/index.tsx",
     devtool: "inline-source-map",
     // webpack-dev-server
     devServer: {
         port: 8000,
         contentBase: path.join(__dirname, "dist"),
-        compress: true
+        compress: true,
+        overlay: true
     },
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx"]
