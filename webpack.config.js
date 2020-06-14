@@ -26,6 +26,8 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     // Read css in source, Translates CSS into CommonJS
                     'css-loader',
+                    // Read css url
+                    'resolve-url-loader',
                     // Compiles Sass to CSS
                     'sass-loader',
                 ],
@@ -36,6 +38,16 @@ module.exports = {
                 loader: "ts-loader",
                 exclude: /node_modules/
             },
+            {
+                test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'
+                    }
+                }]
+            }
         ]
     },
     output: {
