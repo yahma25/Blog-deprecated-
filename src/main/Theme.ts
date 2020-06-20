@@ -48,13 +48,13 @@ export class Theme {
     }
 
     this.primary = '#1976d2';
-    this.darkPrimary = '#125ca7';
+    this.darkPrimary = '#1463b3';
     this.secondary = '#03a87c';
     this.darkSecondary = '#028865';
     this.error = '#e51c23';
     this.darkError = '#b8171d';
     this.white = '#fff';
-    this.gray = '#9e9e9e';
+    this.gray = '#b5b5b5';
     this.lightGray = '#cdcdcd';
     this.darkGray = '#838383';
     this.disabled = 'rgba(0, 0, 0, 0.4)';

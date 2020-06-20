@@ -7,28 +7,30 @@ import getIconName, { IconType } from '../util/IconUtil';
 
 type ButtonProps = {
   children?: ReactNode,
+  onClick?: () => void,
   small?: boolean,
   large?: boolean,
   primary?: boolean,
   secondary?: boolean,
+  outline?: boolean,
   error?: boolean,
   disabled?: boolean,
   iconType?: IconType,
+  rounding?: boolean,
   circle?: boolean
 };
 
 const Button: FunctionComponent<ButtonProps> = ({
-  children, small, large, primary, secondary, error, disabled, iconType, circle,
+  children, onClick, small, large, primary, secondary, outline,
+  error, disabled, iconType, rounding, circle,
 }: ButtonProps) => {
-  const common: CSSObject = (
-    {
-      padding: '6px 16px',
-      borderRadius: '4px',
-      fontFamily: 'medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, Segoe UI,'
-        + 'Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif',
-      fontWeight: 500,
-    }
-  );
+  const common: CSSObject = {
+    padding: '6px 16px',
+    borderRadius: rounding ? '1rem' : '4px',
+    fontFamily: 'medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, Segoe UI,'
+      + 'Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif',
+    fontWeight: 500,
+  };
 
   const typeStyle: FlattenInterpolation<ThemeProps<Theme>> = (
     (primary && css((props: ThemeProps<Theme>) => ({
@@ -40,6 +42,15 @@ const Button: FunctionComponent<ButtonProps> = ({
       color: props.theme.white,
       backgroundColor: props.theme.secondary,
       ':hover': { backgroundColor: props.theme.darkSecondary },
+    })))
+    || (outline && css((props: ThemeProps<Theme>) => ({
+      color: props.theme.primary,
+      backgroundColor: props.theme.background,
+      border: `1px solid ${props.theme.primary}`,
+      ':hover': {
+        color: props.theme.background,
+        backgroundColor: props.theme.primary,
+      },
     })))
     || (error && css((props: ThemeProps<Theme>) => ({
       color: props.theme.white,
@@ -78,7 +89,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   const Wrapper = styled.button(common, typeStyle, size, iconCircleStyles);
 
   return (
-    <Wrapper>
+    <Wrapper onClick={onClick}>
       {iconType && <i className={getIconName(iconType)} />}
       {children}
     </Wrapper>
