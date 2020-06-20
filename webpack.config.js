@@ -64,5 +64,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'style.css'
         })
-    ]
+    ],
+    // in html
+    externals: {
+        // parsing markdown used marked.js
+        marked: 'marked'
+    }
 };
