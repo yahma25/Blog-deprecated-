@@ -12,7 +12,9 @@ module.exports = {
         port: 8000,
         contentBase: path.join(__dirname, "dist"),
         compress: true,
-        overlay: true
+        overlay: true,
+        // for router
+        historyApiFallback: true,
     },
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx"]

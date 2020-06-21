@@ -10,6 +10,11 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     outline: none;
   }
+  textarea {
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+  }
 `;
 
 export default GlobalStyle;

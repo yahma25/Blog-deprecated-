@@ -1,10 +1,21 @@
 import React, { PureComponent } from 'react';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import styled, { CSSObject } from 'styled-components';
 import Text from '../components/Text';
 import Button from '../components/Button';
 import { IconType } from '../util/IconUtil';
 
-class Header extends PureComponent {
+class Header extends PureComponent<RouteComponentProps> {
+  constructor(props: RouteComponentProps) {
+    super(props);
+    this.onClickWriting = this.onClickWriting.bind(this);
+  }
+
+  private onClickWriting() {
+    const { history } = this.props;
+    history.push('/writing');
+  }
+
   render() {
     const StyledHeader = styled.div({
       display: 'flex',
@@ -43,11 +54,19 @@ class Header extends PureComponent {
           <Text xlarge bold>목표가 생기면 무작정 달려들어야지, 실패를 두려워할 여유같은 건 없을 때니까</Text>
         </Center>
         <Right>
-          <Button iconType={IconType.PENCIL} outline rounding large>Writing</Button>
+          <Button
+            iconType={IconType.PENCIL}
+            outline
+            rounding
+            large
+            onClick={this.onClickWriting}
+          >
+            Writing
+          </Button>
         </Right>
       </StyledHeader>
     );
   }
 }
 
-export default Header;
+export default withRouter(Header);
