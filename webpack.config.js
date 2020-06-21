@@ -12,7 +12,9 @@ module.exports = {
         port: 8000,
         contentBase: path.join(__dirname, "dist"),
         compress: true,
-        overlay: true
+        overlay: true,
+        // for router
+        historyApiFallback: true,
     },
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx"]
@@ -64,5 +66,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'style.css'
         })
-    ]
+    ],
+    // in html
+    externals: {
+        // parsing markdown used marked.js
+        marked: 'marked'
+    }
 };

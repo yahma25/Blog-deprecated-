@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
+import Markdown from '../components/Markdown';
 
 class Body extends PureComponent {
   render() {
+    const text = '# Marked in the browser\n\nRendered by **marked**.';
     return (
-      <div>body</div>
+      <Markdown>{text}</Markdown>
     );
   }
 }
