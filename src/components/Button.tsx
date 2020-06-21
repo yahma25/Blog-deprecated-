@@ -3,7 +3,8 @@ import styled, {
   css, CSSObject, FlattenInterpolation, ThemeProps,
 } from 'styled-components';
 import { Theme } from '../main/Theme';
-import getIconName, { IconType } from '../util/IconUtil';
+import Icon from './Icon';
+import { IconType } from '../util/IconUtil';
 
 type ButtonProps = {
   children?: ReactNode,
@@ -86,13 +87,13 @@ const Button: FunctionComponent<ButtonProps> = ({
     || { width: '35px', height: '35px' },
   ]) : null;
 
-  const Wrapper = styled.button(common, typeStyle, size, iconCircleStyles);
+  const StyledButton = styled.button(common, typeStyle, size, iconCircleStyles);
 
   return (
-    <Wrapper onClick={onClick}>
-      {iconType && <i className={getIconName(iconType)} />}
+    <StyledButton onClick={onClick}>
+      {iconType && <Icon type={iconType} includedText={!!children} />}
       {children}
-    </Wrapper>
+    </StyledButton>
   );
 };
 

@@ -6,7 +6,7 @@ import { IconType } from '../util/IconUtil';
 
 class Header extends PureComponent {
   render() {
-    const Wrapper = styled.div({
+    const StyledHeader = styled.div({
       display: 'flex',
       alignItems: 'center',
       height: '60px',
@@ -18,28 +18,34 @@ class Header extends PureComponent {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'left',
-      paddingLeft: '20px',
+      padding: '0 10px',
     } as CSSObject);
 
     const Center = styled.div({
       flex: 2,
       textAlign: 'center',
-    });
+    } as CSSObject);
 
     const Right = styled.div({
       flex: 1,
-    });
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      padding: '0 10px',
+    } as CSSObject);
 
     return (
-      <Wrapper>
+      <StyledHeader>
         <Left>
           <Button iconType={IconType.MENU} circle large primary />
         </Left>
         <Center>
           <Text xlarge bold>목표가 생기면 무작정 달려들어야지, 실패를 두려워할 여유같은 건 없을 때니까</Text>
         </Center>
-        <Right />
-      </Wrapper>
+        <Right>
+          <Button iconType={IconType.PENCIL} outline rounding large>Writing</Button>
+        </Right>
+      </StyledHeader>
     );
   }
 }
