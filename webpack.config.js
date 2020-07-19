@@ -70,6 +70,6 @@ module.exports = {
     // in html
     externals: {
         // parsing markdown used marked.js
-        marked: 'marked'
+        // marked: 'marked'
     }
 };

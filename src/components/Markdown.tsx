@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from 'react';
-import marked from 'marked';
+import ReactMarkdown from 'react-markdown';
 
-type MarkdownProps = {
-  children?: string
-};
+interface MarkdownProps {
+  content: string
+}
 
-const Markdown: FunctionComponent = ({ children }: MarkdownProps) => (
-  <span dangerouslySetInnerHTML={{ __html: marked(children) }} />
+const Markdown: FunctionComponent<MarkdownProps> = ({ content }: MarkdownProps) => (
+  <ReactMarkdown source={content} />
 );
 
 export default Markdown;
