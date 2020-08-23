@@ -6,6 +6,8 @@
     "module": "commonjs",
     "target": "es6",
     "jsx": "react",
+    "emitDecoratorMetadata": true,  // graphql ts를 위함
+    "experimentalDecorators": true, // graphql ts를 위함
     "esModuleInterop": true // import React, ReactDOM 사용 가능. https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html
   },
   "include": ["./src/"],

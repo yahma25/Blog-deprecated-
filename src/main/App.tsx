@@ -9,6 +9,7 @@ import GlobalStyle from './GlobalStyle';
 import WritingPage from '../pages/writing/WritingPage';
 import rootReducer from '../reducers';
 import ArticlePage from '../pages/article/ArticlePage';
+import ArticlePages from '../pages/article/ArticlePages';
 
 // TODO: theme should be changed by theme type option. ex) light, dark, ...
 
@@ -24,6 +25,7 @@ class App extends PureComponent {
             <Switch>
               <Route path='/' exact component={AppLayout} />
               <Route path='/writing' component={WritingPage} />
+              <Route path='/articles' component={ArticlePages} />
               <Route path='/article' component={ArticlePage} />
             </Switch>
           </Provider>

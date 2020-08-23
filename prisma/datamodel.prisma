@@ -1,0 +1,9 @@
+type Article {
+    id: ID! @id
+    thumbUrl: String!
+    title: String!
+    content: String!
+    tags: [String!]! @scalarList(strategy: RELATION)
+    createdAt: DateTime! @createdAt
+    updatedAt: DateTime! @updatedAt
+}
