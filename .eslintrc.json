@@ -21,6 +21,8 @@
   "rules": {
     // it uses for vars in import
     "@typescript-eslint/no-unused-vars": "error",
+    // index.d.ts에 포함된 참조경로 경고
+    "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
     "import/extensions": [
       "error",
@@ -61,7 +63,8 @@
           "componentWillUnmount"
         ]
       }
-    ]
+    ],
+    "no-plusplus": "off"
   },
   "settings": {
     "import/resolver": {
