@@ -1,2 +1,4 @@
+# deprecated
+
 # Blog
 My Blog
